@@ -37,8 +37,6 @@ function prompt {
 
     Write-Host $curPath -NoNewline -ForegroundColor Blue
     Write-Host " : " -NoNewline -ForegroundColor DarkGray
-    Write-Host (Get-Date -Format G) -NoNewline -ForegroundColor DarkMagenta
-    Write-Host " : " -NoNewline -ForegroundColor DarkGray
     $LastExitCode = $origLastExitCode
     "`n$('>' * ($nestedPromptLevel + 1)) "
 }
@@ -52,7 +50,6 @@ $VIMPATH = "C:\Program Files (x86)\Vim\vim80\vim.exe"
 
 Set-Alias vi $VIMPATH
 Set-Alias vim $VIMPATH
-Set-Alias gs Git-Status
 
 Function Edit-Profile {
     vim $profile
@@ -62,6 +59,31 @@ Function Edit-Vimrc {
     vim $home\_vimrc
 }
 
+Function Edit-ProfileLocal { vim $home\documents\WindowsPowerShell\Scripts\local.ps1 } 
+
+# Bash aliases
+Set-Alias -Name touch -Value Bash-Touch
+Function Bash-Touch ($fileName) { echo $null >> $fileName } 
+# End Bash
+
+# Git aliases
+Set-Alias gs Git-Status
 Function Git-Status {
-	git status
+git status
+}
+
+Set-Alias -Name gico -Value Git-Checkout
+Function Git-Checkout ($branch) { git checkout $branch } 
+
+Set-Alias -Name gicm -Value Git-Commit
+Function Git-Commit ($message) { git commit -m $message }
+
+Set-Alias -Name gia -Value Git-Add
+Function Git-Add ($x) { git add $x }
+# End Git
+ 
+# Local config
+$path = "$home/documents/WindowsPowerShell/Scripts/local.ps1"
+if([System.IO.File]::Exists($path)) {
+	. $path
 }

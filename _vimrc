@@ -4,6 +4,9 @@ filetype plugin indent on
 " set path+=**
 set relativenumber
 
+nmap <c-s> :w<cr>
+imap <c-s> <esc>:w<cr>a
+
 call plug#begin('~/vimfiles/plugged')
 
 Plug 'jiangmiao/auto-pairs'

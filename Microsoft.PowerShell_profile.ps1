@@ -80,6 +80,9 @@ Function Git-Commit ($message) { git commit -m $message }
 
 Set-Alias -Name gia -Value Git-Add
 Function Git-Add ($x) { git add $x }
+
+Set-Alias -Name gips -Value Git-Push
+Function Git-Push { git push }
 # End Git
  
 # Local config

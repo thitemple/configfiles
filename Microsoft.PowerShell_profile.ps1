@@ -67,7 +67,7 @@ Function Bash-Touch ($fileName) { echo $null >> $fileName }
 # End Bash
 
 # Git aliases
-Set-Alias gs Git-Status
+Set-Alias gis Git-Status
 Function Git-Status {
 git status
 }

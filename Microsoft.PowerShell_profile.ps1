@@ -83,6 +83,9 @@ Function Git-Add ($x) { git add $x }
 
 Set-Alias -Name gips -Value Git-Push
 Function Git-Push { git push }
+
+Set-Alias -Name gires -Value Git-Reset
+Function Git-Reset { git reset --hard }
 # End Git
  
 # Local config

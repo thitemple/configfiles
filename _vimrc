@@ -13,6 +13,8 @@ call plug#begin('~/vimfiles/plugged')
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'Valloric/YouCompleteMe'
+
 Plug 'ElmCast/elm-vim'
 let g:polyglot_disabled = ['elm']
 

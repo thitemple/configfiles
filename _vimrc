@@ -3,6 +3,7 @@ syntax on
 filetype plugin indent on
 " set path+=**
 set relativenumber
+set tabstop=4
 
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a

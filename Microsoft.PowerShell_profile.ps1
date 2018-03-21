@@ -86,6 +86,15 @@ Function Git-Push { git push }
 
 Set-Alias -Name gires -Value Git-Reset
 Function Git-Reset { git reset --hard }
+
+Set-Alias -Name giss -Value Git-StashSave
+Function Git-StashSave { git stash save }
+
+Set-Alias -Name gisp -Value Git-StashPop
+Function Git-StashPop { git stash pop }
+
+Set-Alias -Name gipsu -Value Git-PushNewBranch
+Function Git-PushNewBranch($b) { git push -u origin $b }
 # End Git
  
 # Local config

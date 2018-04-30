@@ -95,6 +95,9 @@ Function Git-StashPop { git stash pop }
 
 Set-Alias -Name gipsu -Value Git-PushNewBranch
 Function Git-PushNewBranch($b) { git push -u origin $b }
+
+Set-Alias -Name ginew -Value Git-NewBranch
+Function Git-NewBranch($b) { git checkout -b $b }
 # End Git
  
 # Local config
